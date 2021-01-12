@@ -32,6 +32,13 @@ namespace ContactApp
                 }
             }
         }
-        public PhoneNumber() { }
+        public PhoneNumber(long digits)
+        {
+            this.Number = digits;
+        }
+        public PhoneNumber()
+        {
+
+        }
     }
 }

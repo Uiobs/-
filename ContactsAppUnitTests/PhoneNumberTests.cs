@@ -2,8 +2,7 @@
 using ContactApp;
 using NUnit.Framework;
 
-namespace ContactsApp.UnitTests
-{
+
     [TestFixture]
     class PhoneNumberTests
     {
@@ -38,4 +37,4 @@ namespace ContactsApp.UnitTests
             Assert.AreEqual(expected, actual, "Геттер Number возвращает неправильное имя");
         }
     }
-}
+

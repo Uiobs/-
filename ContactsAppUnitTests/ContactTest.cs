@@ -3,8 +3,7 @@ using ContactApp;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
-namespace ContactsApp.UnitTests
-{
+
     [TestFixture]
     public class ContactTests
     {
@@ -283,7 +282,4 @@ namespace ContactsApp.UnitTests
             //assert
             Assert.AreEqual(expected, actual, "Геттер Date возвращает неправильную дату рождения");
         }
-
-
     }
-}

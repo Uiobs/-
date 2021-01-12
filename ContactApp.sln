@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactAppUI", "ContactAppU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactApp", "ContactApp\ContactApp.csproj", "{FBF9FFAB-B21D-4577-B281-27D5A9E1EEAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp.UnitTests", "Unit\ContactsApp.UnitTests\ContactsApp.UnitTests.csproj", "{E24828B5-15AC-41DD-BBB0-A1969F4185F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsAppUnitTests", "ContactsAppUnitTests\ContactsAppUnitTests.csproj", "{9FD32A23-3074-4C6A-ACAF-C5D1A4C1B60F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FBF9FFAB-B21D-4577-B281-27D5A9E1EEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBF9FFAB-B21D-4577-B281-27D5A9E1EEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBF9FFAB-B21D-4577-B281-27D5A9E1EEAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E24828B5-15AC-41DD-BBB0-A1969F4185F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E24828B5-15AC-41DD-BBB0-A1969F4185F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E24828B5-15AC-41DD-BBB0-A1969F4185F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E24828B5-15AC-41DD-BBB0-A1969F4185F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD32A23-3074-4C6A-ACAF-C5D1A4C1B60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD32A23-3074-4C6A-ACAF-C5D1A4C1B60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD32A23-3074-4C6A-ACAF-C5D1A4C1B60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD32A23-3074-4C6A-ACAF-C5D1A4C1B60F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

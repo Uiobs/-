@@ -143,7 +143,18 @@ namespace ContactApp
         /// Номер телефона персоны.
         /// </summary>
         public PhoneNumber PhoneNumber { get; set; } = new PhoneNumber();
-        public Contact() { }
+
+        public Contact() {}
+
+        public Contact(string surname, string name, PhoneNumber phoneNumber, DateTime dateTime, string mail, string vk)
+        {
+            this.Surname = surname;
+            this.Name = name;
+            this.PhoneNumber = phoneNumber;
+            this.Date = dateTime;
+            this.Email = mail;
+            this.Vkid = vk;
+        }
 
         // <summary>
         /// Метод клонирования объекта данного класса.
