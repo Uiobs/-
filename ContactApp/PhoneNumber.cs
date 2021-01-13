@@ -32,13 +32,11 @@ namespace ContactApp
                 }
             }
         }
-        public PhoneNumber(long digits)
-        {
-            this.Number = digits;
-        }
-        public PhoneNumber()
-        {
-
-        }
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
+        /// <param name="digits">Цифры номера телефона</param>
+        public PhoneNumber(long digits) { this.Number = digits; }
+        public PhoneNumber() { }
     }
 }

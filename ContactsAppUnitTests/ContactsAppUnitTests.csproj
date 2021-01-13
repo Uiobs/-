@@ -57,6 +57,8 @@
     <Compile Include="TestProjectInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="TestData\TestData.notes" />
+    <None Include="TestData\WrongTestData.notes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

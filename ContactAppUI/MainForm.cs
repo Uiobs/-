@@ -5,14 +5,12 @@ using System.Linq;
 
 namespace ContactAppUI
 {
-
     /// <summary>
     /// Логика взаимодействия для MainForm
     /// </summary>
     public partial class MainForm : Form
     {
         private Project _project;
-        
         public MainForm()
         {
             InitializeComponent();
@@ -150,7 +148,7 @@ namespace ContactAppUI
             ContactsListBox.DataSource = _project._contactlist;
             ContactsListBox.DisplayMember = "Surname";
         }
-        
+
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedIndex = ContactsListBox.SelectedIndex;
@@ -167,8 +165,7 @@ namespace ContactAppUI
                 PhoneTextBox.Text = "";
                 EmailTextBox.Text = "";
                 VKTextBox.Text = "";
-            }
-            
+            } 
         }
 
         private void ChangeSelectContact(Contact contact)

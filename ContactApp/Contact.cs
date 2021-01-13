@@ -143,9 +143,7 @@ namespace ContactApp
         /// Номер телефона персоны.
         /// </summary>
         public PhoneNumber PhoneNumber { get; set; } = new PhoneNumber();
-
         public Contact() {}
-
         public Contact(string surname, string name, PhoneNumber phoneNumber, DateTime dateTime, string mail, string vk)
         {
             this.Surname = surname;

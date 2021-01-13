@@ -31,7 +31,6 @@ using Assert = NUnit.Framework.Assert;
                             _contact.Surname = TooLongSurname;
                         },
                         message);
-
         }
 
         [Test]
@@ -50,7 +49,6 @@ using Assert = NUnit.Framework.Assert;
                 },
                 message);
         }
-
 
         [Test]
         public void Surname_Get_CorrectValue()
@@ -99,7 +97,6 @@ using Assert = NUnit.Framework.Assert;
                 message);
         }
 
-
         [Test]
         public void Name_Get_CorrectValue()
         {
@@ -113,7 +110,6 @@ using Assert = NUnit.Framework.Assert;
             //assert
             Assert.AreEqual(expected, actual, "Геттер Name возвращает неправильное имя");
         }
-
 
         [Test]
         public void Email_TooLong_ThrowsException()
@@ -148,7 +144,6 @@ using Assert = NUnit.Framework.Assert;
                 message);
         }
 
-
         [Test]
         public void Email_Get_CorrectValue()
         {
@@ -162,12 +157,6 @@ using Assert = NUnit.Framework.Assert;
             //assert
             Assert.AreEqual(expected, actual, "Геттер Email возвращает неправильное имя");
         }
-
-
-
-
-
-
 
         [Test]
         public void Vkid_TooLong_ThrowsException()
@@ -202,7 +191,6 @@ using Assert = NUnit.Framework.Assert;
                 message);
         }
 
-
         [Test]
         public void Vkid_Get_CorrectValue()
         {
@@ -216,7 +204,6 @@ using Assert = NUnit.Framework.Assert;
             //assert
             Assert.AreEqual(expected, actual, "Геттер Vkid возвращает неправильное имя");
         }
-
 
         [Test]
         public void Date_Future_ThrowsException()
