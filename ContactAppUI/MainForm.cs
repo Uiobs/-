@@ -122,14 +122,14 @@ namespace ContactAppUI
         /// </summary>
         private void CheckForBirthday()
         {
-            var birthdayBoys = _project.BirthdayBoy(DateTime.Today);
+            var birthdayData = _project.BirthdayData(DateTime.Today);
             var labelText = "";
-            if (birthdayBoys.Count != 0)
+            if (birthdayData.Count != 0)
             {
                 labelText = "\n";
-                foreach (var birthdayBoy in birthdayBoys)
+                foreach (var birthdayDat in birthdayData)
                 {
-                    labelText += $@"{birthdayBoy.Name}{birthdayBoy.Surname} " + "\r\n";
+                    labelText += $@"{birthdayDat.Name}{birthdayDat.Surname} " + "\r\n";
                 }
             }
             else

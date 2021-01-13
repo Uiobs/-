@@ -12,7 +12,7 @@ using ContactsAppUnitTests;
             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
             + @"\TestData\TestData.notes";
 
-        private readonly string _corruptedFilePath =
+        private readonly string _wrongFilePath =
             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
             + @"\TestData\CorruptedTestData.notes";
 
@@ -44,7 +44,7 @@ using ContactsAppUnitTests;
         [Test(Description = "Негативный тест на загрузку поврежденного файл")]
         public void TestLoad_CorruptedFile()
         {
-            var testProject = ProjectManager.LoadFromFile(_corruptedFilePath);
+            var testProject = ProjectManager.LoadFromFile(_wrongFilePath);
 
             Assert.IsEmpty(testProject._contactlist, "Загружены неизвестные данные");
         }

@@ -38,19 +38,19 @@ namespace ContactApp
         /// <summary>
         /// Поиск именинников из текущего списка контактов и создание списка из таких контактов
         /// </summary>
-        public List<Contact> BirthdayBoy(DateTime date)
+        public List<Contact> BirthdayData(DateTime date)
         {
-            var birthdateboyList = new List<Contact>();
+            var birthdatedataList = new List<Contact>();
             var Contactlist = new List<Contact>();
             Contactlist = _contactlist;
             foreach (Contact contact in Contactlist)
             {
                 if (contact.Date.Month == date.Month && contact.Date.Day == date.Day)
                 {
-                    birthdateboyList.Add((contact));
+                    birthdatedataList.Add((contact));
                 }
             }
-            return birthdateboyList;
+            return birthdatedataList;
         }
     }
 }
