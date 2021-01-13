@@ -73,9 +73,9 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
-            this.AddButton.Location = new System.Drawing.Point(20, 430);
+            this.AddButton.Location = new System.Drawing.Point(20, 432);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(65, 37);
+            this.AddButton.Size = new System.Drawing.Size(40, 35);
             this.AddButton.TabIndex = 12;
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.OKbutton_Click);
@@ -277,9 +277,9 @@
             this.RemoveContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.RemoveContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveContactButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveContactButton.Image")));
-            this.RemoveContactButton.Location = new System.Drawing.Point(162, 430);
+            this.RemoveContactButton.Location = new System.Drawing.Point(112, 432);
             this.RemoveContactButton.Name = "RemoveContactButton";
-            this.RemoveContactButton.Size = new System.Drawing.Size(65, 37);
+            this.RemoveContactButton.Size = new System.Drawing.Size(35, 35);
             this.RemoveContactButton.TabIndex = 27;
             this.RemoveContactButton.UseVisualStyleBackColor = true;
             this.RemoveContactButton.Click += new System.EventHandler(this.RemoveContactButton_Click);
@@ -291,9 +291,9 @@
             this.EditContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.EditContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditContactButton.Image = ((System.Drawing.Image)(resources.GetObject("EditContactButton.Image")));
-            this.EditContactButton.Location = new System.Drawing.Point(91, 430);
+            this.EditContactButton.Location = new System.Drawing.Point(66, 430);
             this.EditContactButton.Name = "EditContactButton";
-            this.EditContactButton.Size = new System.Drawing.Size(65, 37);
+            this.EditContactButton.Size = new System.Drawing.Size(40, 37);
             this.EditContactButton.TabIndex = 28;
             this.EditContactButton.UseVisualStyleBackColor = true;
             this.EditContactButton.Click += new System.EventHandler(this.EditContactButton_Click);
