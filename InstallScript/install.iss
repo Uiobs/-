@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile={#SourcePath}\LICENSE
+LicenseFile={#SourcePath}Realese\LICENSE
 ; The [Icons] "quicklaunchicon" entry uses {userappdata} but its [Tasks] entry has a proper IsAdminInstallMode Check.
 UsedUserAreasWarning=no
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
@@ -30,7 +30,6 @@ OutputBaseFilename=Setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
-SetupIconFile = ContactApp.ico
 
 [Languages]
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
@@ -39,11 +38,9 @@ Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#SourcePath}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "ContactAppUI.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "ContactApp.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "ContactApp.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Realese\ContactAppUI.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Realese\ContactApp.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Realese\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

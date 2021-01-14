@@ -44,9 +44,6 @@
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.ContactsListBox = new System.Windows.Forms.ListBox();
             this.ContactBox = new System.Windows.Forms.GroupBox();
-            this.BirthdayGroupBox = new System.Windows.Forms.GroupBox();
-            this.BirthdaySurnameLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.RemoveContactButton = new System.Windows.Forms.Button();
             this.EditContactButton = new System.Windows.Forms.Button();
             this.FindTextBox = new System.Windows.Forms.TextBox();
@@ -60,9 +57,12 @@
             this.removeContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BirthdayPanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.BirthdayTextBox = new System.Windows.Forms.TextBox();
             this.ContactBox.SuspendLayout();
-            this.BirthdayGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.BirthdayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddButton
@@ -73,7 +73,7 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
-            this.AddButton.Location = new System.Drawing.Point(20, 432);
+            this.AddButton.Location = new System.Drawing.Point(20, 446);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(40, 35);
             this.AddButton.TabIndex = 12;
@@ -142,7 +142,7 @@
             this.BirthdayTimePicker.Location = new System.Drawing.Point(111, 70);
             this.BirthdayTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.BirthdayTimePicker.Name = "BirthdayTimePicker";
-            this.BirthdayTimePicker.Size = new System.Drawing.Size(212, 20);
+            this.BirthdayTimePicker.Size = new System.Drawing.Size(353, 20);
             this.BirthdayTimePicker.TabIndex = 18;
             this.BirthdayTimePicker.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.BirthdayTimePicker.ValueChanged += new System.EventHandler(this.BirthdayTimePicker_ValueChanged);
@@ -154,7 +154,7 @@
             this.VKTextBox.Location = new System.Drawing.Point(111, 151);
             this.VKTextBox.Name = "VKTextBox";
             this.VKTextBox.ReadOnly = true;
-            this.VKTextBox.Size = new System.Drawing.Size(212, 20);
+            this.VKTextBox.Size = new System.Drawing.Size(353, 20);
             this.VKTextBox.TabIndex = 17;
             // 
             // EmailTextBox
@@ -164,7 +164,7 @@
             this.EmailTextBox.Location = new System.Drawing.Point(111, 125);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.ReadOnly = true;
-            this.EmailTextBox.Size = new System.Drawing.Size(212, 20);
+            this.EmailTextBox.Size = new System.Drawing.Size(353, 20);
             this.EmailTextBox.TabIndex = 16;
             // 
             // PhoneTextBox
@@ -174,7 +174,7 @@
             this.PhoneTextBox.Location = new System.Drawing.Point(111, 99);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.ReadOnly = true;
-            this.PhoneTextBox.Size = new System.Drawing.Size(212, 20);
+            this.PhoneTextBox.Size = new System.Drawing.Size(353, 20);
             this.PhoneTextBox.TabIndex = 15;
             this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
@@ -185,7 +185,7 @@
             this.NameTextBox.Location = new System.Drawing.Point(111, 45);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.ReadOnly = true;
-            this.NameTextBox.Size = new System.Drawing.Size(212, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(353, 20);
             this.NameTextBox.TabIndex = 14;
             // 
             // SurnameTextBox
@@ -195,7 +195,7 @@
             this.SurnameTextBox.Location = new System.Drawing.Point(111, 19);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.ReadOnly = true;
-            this.SurnameTextBox.Size = new System.Drawing.Size(212, 20);
+            this.SurnameTextBox.Size = new System.Drawing.Size(353, 20);
             this.SurnameTextBox.TabIndex = 13;
             // 
             // ContactsListBox
@@ -215,8 +215,7 @@
             this.ContactBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ContactBox.Controls.Add(this.BirthdayGroupBox);
-            this.ContactBox.Controls.Add(this.label8);
+            this.ContactBox.Controls.Add(this.BirthdayPanel);
             this.ContactBox.Controls.Add(this.SurnameTextBox);
             this.ContactBox.Controls.Add(this.NameTextBox);
             this.ContactBox.Controls.Add(this.label6);
@@ -232,43 +231,10 @@
             this.ContactBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContactBox.Location = new System.Drawing.Point(233, 27);
             this.ContactBox.Name = "ContactBox";
-            this.ContactBox.Size = new System.Drawing.Size(329, 397);
+            this.ContactBox.Size = new System.Drawing.Size(470, 397);
             this.ContactBox.TabIndex = 26;
             this.ContactBox.TabStop = false;
             this.ContactBox.Text = "Contact";
-            // 
-            // BirthdayGroupBox
-            // 
-            this.BirthdayGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BirthdayGroupBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.BirthdayGroupBox.Controls.Add(this.BirthdaySurnameLabel);
-            this.BirthdayGroupBox.Location = new System.Drawing.Point(0, 306);
-            this.BirthdayGroupBox.Name = "BirthdayGroupBox";
-            this.BirthdayGroupBox.Size = new System.Drawing.Size(329, 91);
-            this.BirthdayGroupBox.TabIndex = 25;
-            this.BirthdayGroupBox.TabStop = false;
-            this.BirthdayGroupBox.Enter += new System.EventHandler(this.BirthdayGroupBox_Enter);
-            // 
-            // BirthdaySurnameLabel
-            // 
-            this.BirthdaySurnameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BirthdaySurnameLabel.AutoSize = true;
-            this.BirthdaySurnameLabel.Location = new System.Drawing.Point(6, 35);
-            this.BirthdaySurnameLabel.Name = "BirthdaySurnameLabel";
-            this.BirthdaySurnameLabel.Size = new System.Drawing.Size(0, 13);
-            this.BirthdaySurnameLabel.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(0, 290);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Сегодня день рождения:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // RemoveContactButton
             // 
@@ -277,7 +243,7 @@
             this.RemoveContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.RemoveContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveContactButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveContactButton.Image")));
-            this.RemoveContactButton.Location = new System.Drawing.Point(112, 432);
+            this.RemoveContactButton.Location = new System.Drawing.Point(112, 446);
             this.RemoveContactButton.Name = "RemoveContactButton";
             this.RemoveContactButton.Size = new System.Drawing.Size(35, 35);
             this.RemoveContactButton.TabIndex = 27;
@@ -291,7 +257,7 @@
             this.EditContactButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
             this.EditContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditContactButton.Image = ((System.Drawing.Image)(resources.GetObject("EditContactButton.Image")));
-            this.EditContactButton.Location = new System.Drawing.Point(66, 430);
+            this.EditContactButton.Location = new System.Drawing.Point(66, 444);
             this.EditContactButton.Name = "EditContactButton";
             this.EditContactButton.Size = new System.Drawing.Size(40, 37);
             this.EditContactButton.TabIndex = 28;
@@ -323,7 +289,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(574, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(715, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -388,9 +354,46 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
+            // BirthdayPanel
+            // 
+            this.BirthdayPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BirthdayPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BirthdayPanel.Controls.Add(this.BirthdayTextBox);
+            this.BirthdayPanel.Controls.Add(this.label8);
+            this.BirthdayPanel.Location = new System.Drawing.Point(0, 334);
+            this.BirthdayPanel.Name = "BirthdayPanel";
+            this.BirthdayPanel.Size = new System.Drawing.Size(470, 67);
+            this.BirthdayPanel.TabIndex = 26;
+            this.BirthdayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(132, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Сегодня день рождения:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // BirthdayTextBox
+            // 
+            this.BirthdayTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BirthdayTextBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BirthdayTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BirthdayTextBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BirthdayTextBox.Location = new System.Drawing.Point(6, 21);
+            this.BirthdayTextBox.Multiline = true;
+            this.BirthdayTextBox.Name = "BirthdayTextBox";
+            this.BirthdayTextBox.ReadOnly = true;
+            this.BirthdayTextBox.Size = new System.Drawing.Size(458, 43);
+            this.BirthdayTextBox.TabIndex = 0;
+            this.BirthdayTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(574, 479);
+            this.ClientSize = new System.Drawing.Size(715, 493);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.FindTextBox);
             this.Controls.Add(this.EditContactButton);
@@ -406,10 +409,10 @@
             this.Text = "ContactApp";
             this.ContactBox.ResumeLayout(false);
             this.ContactBox.PerformLayout();
-            this.BirthdayGroupBox.ResumeLayout(false);
-            this.BirthdayGroupBox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.BirthdayPanel.ResumeLayout(false);
+            this.BirthdayPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,8 +448,8 @@
         private System.Windows.Forms.ToolStripMenuItem editContactToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeContactToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.GroupBox BirthdayGroupBox;
-        private System.Windows.Forms.Label BirthdaySurnameLabel;
+        private System.Windows.Forms.Panel BirthdayPanel;
+        private System.Windows.Forms.TextBox BirthdayTextBox;
         private System.Windows.Forms.Label label8;
     }
 }

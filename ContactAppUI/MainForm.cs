@@ -10,6 +10,7 @@ namespace ContactAppUI
     /// </summary>
     public partial class MainForm : Form
     {
+        const string BIRTDAYS_STRING_START = "";
         private Project _project;
         public MainForm()
         {
@@ -122,22 +123,26 @@ namespace ContactAppUI
         /// </summary>
         private void CheckForBirthday()
         {
+            var birthdays = from contact in _project._contactlist
+                            where (contact.Date.Month == DateTime.Now.Month)
+                            && (contact.Date.Day == DateTime.Now.Day)
+                            select contact;
             var birthdayData = _project.BirthdayData(DateTime.Today);
-            var labelText = "";
             if (birthdayData.Count != 0)
             {
-                labelText = "\n";
                 foreach (var birthdayDat in birthdayData)
                 {
-                    labelText += $@"{birthdayDat.Name}{birthdayDat.Surname} " + "\r\n";
+                    var birthdaysSurnames = from contact in birthdays
+                                            select contact.Surname;
+
+                    BirthdayTextBox.Text = BIRTDAYS_STRING_START + string.Join(", ", birthdaysSurnames);
+                    BirthdayPanel.Visible = true;
                 }
             }
             else
             {
-                labelText = @"Сегодня именинников нет.";
-            }
-
-            BirthdayGroupBox.Text = labelText;
+                BirthdayPanel.Visible = false;
+            } 
         }
         /// <summary>
         /// Обновление списка контактов
@@ -149,6 +154,15 @@ namespace ContactAppUI
             ContactsListBox.DisplayMember = "Surname";
         }
 
+        private void ChangeSelectContact(Contact contact)
+        {
+            SurnameTextBox.Text = contact.Surname;
+            NameTextBox.Text = contact.Name;
+            BirthdayTimePicker.Value = contact.Date;
+            PhoneTextBox.Text = contact.PhoneNumber.Number.ToString();
+            EmailTextBox.Text = contact.Email;
+            VKTextBox.Text = contact.Vkid;
+        }
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedIndex = ContactsListBox.SelectedIndex;
@@ -165,17 +179,7 @@ namespace ContactAppUI
                 PhoneTextBox.Text = "";
                 EmailTextBox.Text = "";
                 VKTextBox.Text = "";
-            } 
-        }
-
-        private void ChangeSelectContact(Contact contact)
-        {
-            SurnameTextBox.Text = contact.Surname;
-            NameTextBox.Text = contact.Name;
-            BirthdayTimePicker.Value = contact.Date;
-            PhoneTextBox.Text = contact.PhoneNumber.Number.ToString();
-            EmailTextBox.Text = contact.Email;
-            VKTextBox.Text = contact.Vkid;
+            }
         }
         private void OKbutton_Click(object sender, EventArgs e)
         {
@@ -228,24 +232,16 @@ namespace ContactAppUI
             }
         }
 
-        private void BirthdayGroupBox_Enter(object sender, EventArgs e)
-        {
+        private void BirthdayGroupBox_Enter(object sender, EventArgs e) { }
 
-        }
+        private void label8_Click(object sender, EventArgs e) { }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
+        private void BirthdayTimePicker_ValueChanged(object sender, EventArgs e) { }
 
-        }
+        private void PhoneTextBox_TextChanged(object sender, EventArgs e) { }
 
-        private void BirthdayTimePicker_ValueChanged(object sender, EventArgs e)
-        {
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
 
-        }
-
-        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
     }
 }
