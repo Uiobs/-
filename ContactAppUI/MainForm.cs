@@ -132,6 +132,7 @@ namespace ContactAppUI
                     ResetListBox();
                 }
             }
+            FindTextBox.Clear();
         }
         /// <summary>
         /// Обновление списка именнинков
@@ -240,7 +241,6 @@ namespace ContactAppUI
                 ContactsListBox.SelectedIndex = 0;
             }
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
