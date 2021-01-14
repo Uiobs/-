@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using ContactApp;
 using System.Linq;
+using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace ContactAppUI
 {
@@ -10,8 +12,20 @@ namespace ContactAppUI
     /// </summary>
     public partial class MainForm : Form
     {
+
+        /// <summary>
+        /// Поле для хранения списка контактов, отображамых в левой панели
+        /// </summary>
+        private List<Contact> _displayedContacts;
+
+        /// <summary>
+        /// Начальная фраза в панели именинников
+        /// </summary>
         const string BIRTDAYS_STRING_START = "";
+
         private Project _project;
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -93,6 +107,7 @@ namespace ContactAppUI
                 ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
                 ContactsListBox.SetSelected(selectedIndex, true);
             }
+            FindTextBox.Clear();
         }
         
         /// <summary>
@@ -154,15 +169,7 @@ namespace ContactAppUI
             ContactsListBox.DisplayMember = "Surname";
         }
 
-        private void ChangeSelectContact(Contact contact)
-        {
-            SurnameTextBox.Text = contact.Surname;
-            NameTextBox.Text = contact.Name;
-            BirthdayTimePicker.Value = contact.Date;
-            PhoneTextBox.Text = contact.PhoneNumber.Number.ToString();
-            EmailTextBox.Text = contact.Email;
-            VKTextBox.Text = contact.Vkid;
-        }
+        
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedIndex = ContactsListBox.SelectedIndex;
@@ -181,6 +188,15 @@ namespace ContactAppUI
                 VKTextBox.Text = "";
             }
         }
+        private void ChangeSelectContact(Contact contact)
+        {
+            SurnameTextBox.Text = contact.Surname;
+            NameTextBox.Text = contact.Name;
+            BirthdayTimePicker.Value = contact.Date;
+            PhoneTextBox.Text = contact.PhoneNumber.Number.ToString();
+            EmailTextBox.Text = contact.Email;
+            VKTextBox.Text = contact.Vkid;
+        }
         private void OKbutton_Click(object sender, EventArgs e)
         {
             Add();
@@ -193,9 +209,36 @@ namespace ContactAppUI
         {
             Remove();
         }
+
+        private void ShowListBoxItems(List<Contact> contacts)
+        {
+            ContactsListBox.DataSource = null;
+            ContactsListBox.Items.Clear();
+
+            for (int i = 0; i < contacts.Count; i++)
+            {
+                ContactsListBox.Items.Add(contacts[i].Surname);
+            }
+        }
+
         private void FindTextBox_TextChanged(object sender, EventArgs e)
         {
-            FindTextBoxCheck();
+            _displayedContacts = _project.SortList(FindTextBox.Text);
+
+            if (_displayedContacts.Count == _project._contactlist.Count)
+            {
+                _displayedContacts = _project.SortList();
+            }
+
+            ShowListBoxItems(_displayedContacts);
+            SelectFirstContact();
+        }
+        private void SelectFirstContact()
+        {
+            if (_displayedContacts.Count > 0)
+            {
+                ContactsListBox.SelectedIndex = 0;
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
