@@ -137,6 +137,7 @@ namespace ContactAppUI
             }
             FindTextBox.Clear();
         }
+
         /// <summary>
         /// Обновление списка именнинков
         /// </summary>
@@ -163,6 +164,7 @@ namespace ContactAppUI
                 BirthdayPanel.Visible = false;
             } 
         }
+
         /// <summary>
         /// Обновление списка контактов
         /// </summary>
@@ -173,7 +175,9 @@ namespace ContactAppUI
             ContactsListBox.DisplayMember = "Surname";
         }
 
-        
+        /// <summary>
+        /// Отображает выбранный в списке контакт в правой части
+        /// </summary>
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedIndex = ContactsListBox.SelectedIndex;
