@@ -7,7 +7,7 @@ namespace ContactApp
     /// <summary>
     /// Класс логики проекта.
     /// </summary>
-    public class Project
+    public class Project: IEquatable<Project>
     {
         /// <summary>
         /// Список из объектов класса Contact
@@ -51,6 +51,11 @@ namespace ContactApp
                 }
             }
             return birthdatedataList;
+        }
+
+        public bool Equals(Project other)
+        {
+            return Equals(_contactlist, other._contactlist);
         }
     }
 }

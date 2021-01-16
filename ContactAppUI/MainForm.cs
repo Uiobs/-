@@ -33,6 +33,7 @@ namespace ContactAppUI
             _project = ProjectManager.LoadFromFile(ProjectManager.DefaultfilePath);
             CheckForBirthday();
             _project._contactlist = _project.SortList();
+            _displayedContacts = _project._contactlist;
             if (_project != null)
             {
                 ListBoxUpdate();
@@ -92,15 +93,16 @@ namespace ContactAppUI
                 MessageBox.Show("Выберите запись для редактирования", "Отсутствие записи");
                 return;
             }
-            var selectedContact = _project._contactlist[selectedIndex];
-            var form = new ContactForm();
-            form.Contact = selectedContact;
+
+            var selectedContact = _displayedContacts[selectedIndex];
+            int index = _project._contactlist.IndexOf(selectedContact); 
+            var form = new ContactForm { Contact = selectedContact };
             var dialogResult = form.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
                 var updatedContact = form.Contact;
-                _project._contactlist.RemoveAt(selectedIndex);
-                _project._contactlist.Insert(selectedIndex, updatedContact);
+                _displayedContacts[selectedIndex] = updatedContact;    
+                _project._contactlist[index] = updatedContact;         
                 CheckForBirthday();
                 ResetListBox();
                 _project._contactlist = _project.SortList();
@@ -109,12 +111,13 @@ namespace ContactAppUI
             }
             FindTextBox.Clear();
         }
-        
+
         /// <summary>
         /// Удалить запись
         /// </summary>
         private void Remove()
         {
+
             var selectedIndex = ContactsListBox.SelectedIndex;
             if (selectedIndex == -1)
             {
@@ -122,11 +125,11 @@ namespace ContactAppUI
             }
             else
             {
+
                 var dialogResult = MessageBox.Show("Удалить эту запись?", "Подтверждение", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
                     _project._contactlist.RemoveAt(selectedIndex);
-                    
                     ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
                     CheckForBirthday();
                     ResetListBox();
@@ -176,7 +179,7 @@ namespace ContactAppUI
             var selectedIndex = ContactsListBox.SelectedIndex;
             if (selectedIndex >= 0)
             {
-                Contact contact = _project._contactlist[selectedIndex];
+                Contact contact = _displayedContacts[selectedIndex];
                 ChangeSelectContact(contact);
             }
             else
@@ -211,6 +214,9 @@ namespace ContactAppUI
             Remove();
         }
 
+        /// <summary>
+        /// Вывод контаков в левую панель
+        /// </summary>
         private void ShowListBoxItems(List<Contact> contacts)
         {
             ContactsListBox.DataSource = null;
@@ -222,23 +228,28 @@ namespace ContactAppUI
             }
         }
 
+        /// <summary>
+        /// Ввод подстроки в текстовое поле для поиска
+        /// </summary>
         private void FindTextBox_TextChanged(object sender, EventArgs e)
         {
+            var selectedIndex = ContactsListBox.SelectedIndex;
             _displayedContacts = _project.SortList(FindTextBox.Text);
 
             if (_displayedContacts.Count == _project._contactlist.Count)
             {
                 _displayedContacts = _project.SortList();
             }
-
             ShowListBoxItems(_displayedContacts);
             SelectFirstContact();
         }
+
         private void SelectFirstContact()
         {
             if (_displayedContacts.Count > 0)
             {
                 ContactsListBox.SelectedIndex = 0;
+                ChangeSelectContact(_displayedContacts[0]);
             }
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

@@ -21,28 +21,28 @@ namespace ContactsAppUnitTests
             var testProject = new Project();
 
             testProject._contactlist.Add(new Contact(
-                "3TestSurname",
-                "TestName",
-                new PhoneNumber(79998877666),
+                surname:"3TestSurname",
+                name:"TestName",
+                new PhoneNumber(digits:79998877666),
                 new DateTime(2000, 1, 1),
-                "TestEmail",
-                "TestVK"));
+                mail:"TestEmail",
+                vk:"TestVK"));
 
-            testProject._contactlist.Add(new Contact(
-                "1TestSurname",
-                "TestName",
+            testProject._contactlist.Add(item:new Contact(
+                surname:"1TestSurname",
+                name:"TestName",
                 new PhoneNumber(79998877667),
                 new DateTime(2000, 2, 1),
-                "TestEmail",
-                "TestVK"));
+                mail:"TestEmail",
+                vk:"TestVK"));
 
-            testProject._contactlist.Add(new Contact(
-                "2TestSurname",
-                "TestName",
+            testProject._contactlist.Add(item:new Contact(
+                surname:"2TestSurname",
+                name:"TestName",
                 new PhoneNumber(79998877668),
                 new DateTime(2000, 3, 1),
-                "TestEmail",
-                "TestVK"));
+                mail:"TestEmail",
+                vk:"TestVK"));
 
             return testProject;
         }

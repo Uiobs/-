@@ -5,12 +5,12 @@ namespace ContactApp
     /// <summary>
     /// Класс контакта.
     /// </summary>
-    public class Contact : ICloneable
+    public class Contact : ICloneable, IEquatable<Contact>
     {
         /// <summary>
         /// Фамилия контакта.
         /// </summary>
-        public string _surname;
+        private string _surname;
 
         /// <summary>
         /// Имя контакта.
@@ -77,6 +77,11 @@ namespace ContactApp
         }
 
         /// <summary>
+        /// Номер телефона персоны.
+        /// </summary>
+        public PhoneNumber PhoneNumber { get; set; } = new PhoneNumber();
+
+        /// <summary>
         /// Свойство даты
         /// Устанавливает значение, если дата не новее нынешней и не позднее 1900 года.
         /// </summary>
@@ -140,10 +145,19 @@ namespace ContactApp
         }
 
         /// <summary>
-        /// Номер телефона персоны.
+        /// Конструктор объекта с незавполненными полями по умолчанию
         /// </summary>
-        public PhoneNumber PhoneNumber { get; set; } = new PhoneNumber();
         public Contact() {}
+
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
+        /// <param name="surname">Фамилия</param>
+        /// <param name="name">Имя</param>
+        /// <param name="phoneNumber">Номер телефона</param>
+        /// <param name="Date">Дата рождения</param>
+        /// <param name="email">Электронная почта</param>
+        /// <param name="vkid">ID ВКонтакте</param>
         public Contact(string surname, string name, PhoneNumber phoneNumber, DateTime dateTime, string mail, string vk)
         {
             this.Surname = surname;
@@ -168,11 +182,21 @@ namespace ContactApp
             {
                 Surname = this.Surname,
                 Name = this.Name,
-                Date = this.Date,
                 PhoneNumber = phoneNumber,
+                Date = this.Date,
                 Email = this.Email,
                 Vkid = this.Vkid
             };
+        }
+
+        public bool Equals(Contact other)
+        {
+            return _surname == other?._surname &&
+                   _name == other?._name &&
+                   _birthDate.Equals(other?._birthDate) &&
+                   _email == other?._email &&
+                   _vkId == other?._vkId &&
+                   Equals(PhoneNumber, other?.PhoneNumber);
         }
     }
 }

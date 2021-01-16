@@ -22,6 +22,23 @@ using NUnit.Framework;
                 "Был передан неправильный список");
         }
 
+        [Test(Description = "Позитивный тест сортировки")]
+        public void TestSortBySurname()
+        {
+        var testProject = TestProjectInitializer.InitProject();
+
+        IEnumerable<string> expected = new[]
+        {
+                "1testsurname",
+                "2testsurname",
+                "3testsurname",
+            };
+        List<Contact> sortedContacts = testProject.SortList();
+
+        Assert.IsTrue(sortedContacts.Select(n => n.Surname).SequenceEqual(expected),
+            "Список отсортирован неверно");
+        }
+
         [TestCase("1testsurnam111", Description = "Тест сортировки с подстрокой больше фамилии")]
         [TestCase("Аааа", Description = "Тест сортировки с подстрокой отличающейся от фамилии")]
         [Test(Description = "Негативный тест сортировки")]

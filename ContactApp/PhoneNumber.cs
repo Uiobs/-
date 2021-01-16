@@ -5,7 +5,7 @@ namespace ContactApp
     /// <summary>
     /// Класс номера телефона.
     /// </summary>
-    public class PhoneNumber
+    public class PhoneNumber:IEquatable<PhoneNumber>
     {
         /// <summary>
         /// Номер телефона.
@@ -37,6 +37,12 @@ namespace ContactApp
         /// </summary>
         /// <param name="digits">Цифры номера телефона</param>
         public PhoneNumber(long digits) { this.Number = digits; }
+
         public PhoneNumber() { }
+
+        public bool Equals(PhoneNumber other)
+        {
+            return _number == other?._number;
+        }
     }
 }
