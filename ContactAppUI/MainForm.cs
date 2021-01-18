@@ -135,7 +135,7 @@ namespace ContactAppUI
         }
 
         /// <summary>
-        /// Поиск индекса
+        /// Поиск индекса для контактов слева
         /// </summary>
         private void CheckIndex()
         {

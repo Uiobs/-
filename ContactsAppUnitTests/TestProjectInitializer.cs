@@ -21,7 +21,7 @@ namespace ContactsAppUnitTests
             var testProject = new Project();
 
             testProject._contactlist.Add(new Contact(
-                surname:"3TestSurname",
+                surname:"Grey",
                 name:"TestName",
                 new PhoneNumber(digits:79998877666),
                 new DateTime(2000, 1, 1),
@@ -29,7 +29,7 @@ namespace ContactsAppUnitTests
                 vk:"TestVK"));
 
             testProject._contactlist.Add(item:new Contact(
-                surname:"1TestSurname",
+                surname:"Aloha",
                 name:"TestName",
                 new PhoneNumber(79998877667),
                 new DateTime(2000, 2, 1),
@@ -37,7 +37,7 @@ namespace ContactsAppUnitTests
                 vk:"TestVK"));
 
             testProject._contactlist.Add(item:new Contact(
-                surname:"2TestSurname",
+                surname:"Cerega",
                 name:"TestName",
                 new PhoneNumber(79998877668),
                 new DateTime(2000, 3, 1),

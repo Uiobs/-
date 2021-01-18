@@ -48,7 +48,7 @@ using ContactsAppUnitTests;
         ProjectManager.SaveToFile(testProject, _testFilePath);
         var expectedProject = ProjectManager.LoadFromFile(_testFilePath);
 
-        Assert.AreEqual(testProject, expectedProject);
+        Assert.AreEqual(expectedProject,testProject);
         }
 
         [Test(Description = "Негативный тест на загрузку поврежденного файл")]

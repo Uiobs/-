@@ -28,9 +28,9 @@ using NUnit.Framework;
 
         IEnumerable<string> expected = new[]
         {
-                "1testsurname",
-                "2testsurname",
-                "3testsurname",
+                "Aloha",
+                "Cerega",
+                "Grey",
             };
         List<Contact> sortedContacts = testProject.SortList();
 
