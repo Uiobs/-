@@ -125,7 +125,7 @@ namespace ContactAppUI
                 var dialogResult = MessageBox.Show("Удалить эту запись?", "Подтверждение", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    _project._contactlist.RemoveAt(selectedIndex);
+                    CheckIndex();
                     ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
                     CheckForBirthday();
                     ResetListBox();
@@ -134,6 +134,18 @@ namespace ContactAppUI
             FindTextBox.Clear();
         }
 
+        /// <summary>
+        /// Поиск индекса
+        /// </summary>
+        private void CheckIndex()
+        {
+            var selectedIndex = ContactsListBox.SelectedIndex;
+            var selectedContact = _displayedContacts[selectedIndex];
+            int index = _project._contactlist.IndexOf(selectedContact);
+            var form = new ContactForm { Contact = selectedContact };
+            _displayedContacts.RemoveAt(selectedIndex);
+            _project._contactlist.RemoveAt(selectedIndex);
+        }
         /// <summary>
         /// Обновление списка именнинков
         /// </summary>
@@ -167,6 +179,7 @@ namespace ContactAppUI
         private void ResetListBox()
         {
             _project._contactlist = _project.SortList();
+            _displayedContacts = _project._contactlist;
             ContactsListBox.DataSource = _project._contactlist;
             ContactsListBox.DisplayMember = "Surname";
         }
