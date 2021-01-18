@@ -23,8 +23,10 @@ namespace ContactAppUI
         /// </summary>
         const string BIRTDAYS_STRING_START = "";
 
+        /// <summary>
+        /// Поле для хранения всех контактов во время работы
+        /// </summary>
         private Project _project;
-
 
         public MainForm()
         {
@@ -43,11 +45,13 @@ namespace ContactAppUI
                 _project = new Project();
             } 
         }
+
         /// <summary>
         /// Добавить запись
         /// </summary>
         private void Add()
         {
+            FindTextBox.Clear();
             var form = new ContactForm();
             var dialogResult = form.ShowDialog();
             if (dialogResult == DialogResult.OK)
@@ -61,13 +65,7 @@ namespace ContactAppUI
             }
             _project._contactlist = _project.SortList();
         }
-        /// <summary>
-        /// Поиск
-        /// </summary>
-        private void FindTextBoxCheck()
-        {
-            ContactsListBox.DataSource = _project.SortList(FindTextBox.Text);
-        }
+
         /// <summary>
         /// Обновление списка контактов
         /// </summary>
@@ -87,7 +85,6 @@ namespace ContactAppUI
         private void Edit()
         {
             var selectedIndex = ContactsListBox.SelectedIndex;
-
             if (selectedIndex == -1)
             {
                 MessageBox.Show("Выберите запись для редактирования", "Отсутствие записи");
@@ -117,7 +114,6 @@ namespace ContactAppUI
         /// </summary>
         private void Remove()
         {
-
             var selectedIndex = ContactsListBox.SelectedIndex;
             if (selectedIndex == -1)
             {

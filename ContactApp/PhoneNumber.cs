@@ -32,6 +32,7 @@ namespace ContactApp
                 }
             }
         }
+
         /// <summary>
         /// Конструктор класса
         /// </summary>
