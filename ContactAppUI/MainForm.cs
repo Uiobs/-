@@ -105,8 +105,8 @@ namespace ContactAppUI
                 _project._contactlist = _project.SortList();
                 ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
                 ContactsListBox.SetSelected(selectedIndex, true);
+                FindTextBox.Clear();
             }
-            FindTextBox.Clear();
         }
 
         /// <summary>

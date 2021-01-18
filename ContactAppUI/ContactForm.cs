@@ -13,6 +13,9 @@ namespace ContactAppUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Возвращает/задёт редактируемый или создаваемый объект
+        /// </summary>
         public Contact Contact
         {
             get { return _contact;}
@@ -40,7 +43,6 @@ namespace ContactAppUI
         /// <summary>
         /// Считывает дату рождения контакта с TimePicker
         /// </summary>
-
         private void OKButton_Click(object sender, EventArgs e)
         {
             long number;
