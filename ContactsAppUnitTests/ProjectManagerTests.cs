@@ -47,8 +47,16 @@ using ContactsAppUnitTests;
         var testProject = TestProjectInitializer.InitProject();
         ProjectManager.SaveToFile(testProject, _testFilePath);
         var expectedProject = ProjectManager.LoadFromFile(_testFilePath);
-
-        Assert.AreEqual(expectedProject,testProject);
+        Assert.Multiple(() =>
+        {
+            Assert.AreEqual(expectedProject._contactlist[0].Surname, testProject._contactlist[0].Surname, "Метод SaveToFile неправильно сохраняет проект(Фамилию)");
+            Assert.AreEqual(expectedProject._contactlist[0].Name, testProject._contactlist[0].Name, "Метод SaveToFile неправильно сохраняет проект(Имя)");
+            Assert.AreEqual(expectedProject._contactlist[0].Vkid, testProject._contactlist[0].Vkid, "Метод SaveToFile неправильно сохраняет проект(ВконтактеID)");
+            Assert.AreEqual(expectedProject._contactlist[0].Email, testProject._contactlist[0].Email, "Метод SaveToFile неправильно сохраняет проект(Почту)");
+            Assert.AreEqual(expectedProject._contactlist[0].Date, testProject._contactlist[0].Date, "Метод SaveToFile неправильно сохраняет проект(Дату рождения)");
+            Assert.AreEqual(expectedProject._contactlist[0].PhoneNumber.Number, testProject._contactlist[0].PhoneNumber.Number, "Метод SaveToFile неправильно сохраняет проект(Номер телефона)");
+        });
+        
         }
 
         [Test(Description = "Негативный тест на загрузку поврежденного файл")]
