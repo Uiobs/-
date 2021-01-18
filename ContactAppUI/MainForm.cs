@@ -144,7 +144,7 @@ namespace ContactAppUI
             int index = _project._contactlist.IndexOf(selectedContact);
             var form = new ContactForm { Contact = selectedContact };
             _displayedContacts.RemoveAt(selectedIndex);
-            _project._contactlist.RemoveAt(selectedIndex);
+            _project._contactlist.RemoveAt(index);
         }
         /// <summary>
         /// Обновление списка именнинков
