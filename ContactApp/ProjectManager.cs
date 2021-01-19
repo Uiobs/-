@@ -10,11 +10,11 @@ namespace ContactApp
         /// Имя файла для сериализации/десериализации данных проекта.
         /// Путь для сериализации/десериализации данных проекта.
         /// </summary>
-
         public static string DefaultPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) 
             + "\\ContactApp";
 
         public static string DefaultfilePath = DefaultPath + "\\ContactApp.note";
+
         /// <summary>
         /// Метод сериализации данных проекта.
         /// </summary>

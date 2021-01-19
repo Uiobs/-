@@ -22,6 +22,7 @@ namespace ContactApp
             var sortedList = _contactlist.OrderBy(contact => contact.Surname).ToList();
             return sortedList;
         }
+
         /// <summary>
         /// Поиск контактов по фамилии
         /// </summary>
@@ -35,6 +36,7 @@ namespace ContactApp
 
             return findSortedList.ToList();
         }
+
         /// <summary>
         /// Поиск именинников из текущего списка контактов и создание списка из таких контактов
         /// </summary>

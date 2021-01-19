@@ -14,6 +14,7 @@ namespace ContactAppUI
             var url = GitHubLinkLabel.Text;
             System.Diagnostics.Process.Start(url);
         }
+
         private void DiscordLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var url = DiscordLink.Text;
@@ -26,9 +27,7 @@ namespace ContactAppUI
             System.Diagnostics.Process.Start(url);
         }
 
-        private void AboutForm_Load(object sender, System.EventArgs e)
-        {
+        private void AboutForm_Load(object sender, System.EventArgs e) { }
 
-        }
     }
 }

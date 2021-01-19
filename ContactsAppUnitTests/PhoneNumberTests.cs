@@ -17,7 +17,7 @@ using NUnit.Framework;
         public void Number_Set_LongNumber()
         {
             var wrongNumber = 7777777777777;
-            var message = "Номер длинее 11";
+            var message = "Номер длинее 11 цифр";
             Assert.Throws<ArgumentException>(
             () => { _number.Number = wrongNumber; },
             message);
@@ -34,7 +34,7 @@ using NUnit.Framework;
             var actual = _number.Number;
 
             //assert
-            Assert.AreEqual(expected, actual, "Геттер Number возвращает неправильное имя");
+            Assert.AreEqual(expected, actual, "Геттер Number возвращает неверные данные");
         }
     }
 

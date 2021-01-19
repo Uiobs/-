@@ -38,7 +38,7 @@ namespace ContactAppUI
             _displayedContacts = _project._contactlist;
             if (_project != null)
             {
-                ListBoxUpdate();
+                UpdateListBox();
             }
             else 
             {
@@ -69,7 +69,7 @@ namespace ContactAppUI
         /// <summary>
         /// Обновление списка контактов
         /// </summary>
-        private void ListBoxUpdate()
+        private void UpdateListBox()
         {
             ContactsListBox.Items.Clear();
 
@@ -146,6 +146,7 @@ namespace ContactAppUI
             _displayedContacts.RemoveAt(selectedIndex);
             _project._contactlist.RemoveAt(index);
         }
+
         /// <summary>
         /// Обновление списка именнинков
         /// </summary>
@@ -205,6 +206,7 @@ namespace ContactAppUI
                 VKTextBox.Text = "";
             }
         }
+
         private void ChangeSelectContact(Contact contact)
         {
             SurnameTextBox.Text = contact.Surname;
@@ -214,14 +216,17 @@ namespace ContactAppUI
             EmailTextBox.Text = contact.Email;
             VKTextBox.Text = contact.Vkid;
         }
+
         private void OKbutton_Click(object sender, EventArgs e)
         {
             Add();
         }
+
         private void EditContactButton_Click(object sender, EventArgs e)
         {
             Edit();
         }
+
         private void RemoveContactButton_Click(object sender, EventArgs e)
         {
             Remove();
