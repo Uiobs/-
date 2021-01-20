@@ -197,6 +197,7 @@
             this.SurnameTextBox.ReadOnly = true;
             this.SurnameTextBox.Size = new System.Drawing.Size(337, 20);
             this.SurnameTextBox.TabIndex = 13;
+            this.SurnameTextBox.TextChanged += new System.EventHandler(this.SurnameTextBox_TextChanged);
             // 
             // ContactsListBox
             // 
@@ -235,6 +236,7 @@
             this.ContactBox.TabIndex = 26;
             this.ContactBox.TabStop = false;
             this.ContactBox.Text = "Contact";
+            this.ContactBox.Enter += new System.EventHandler(this.ContactBox_Enter);
             // 
             // BirthdayPanel
             // 

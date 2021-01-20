@@ -132,6 +132,7 @@ namespace ContactAppUI
                 }
             }
             FindTextBox.Clear();
+            ClearContactInfo();
         }
 
         /// <summary>
@@ -205,6 +206,16 @@ namespace ContactAppUI
                 EmailTextBox.Text = "";
                 VKTextBox.Text = "";
             }
+        }
+
+        private void ClearContactInfo()
+        {
+            SurnameTextBox.Text = "";
+            NameTextBox.Text = "";
+            BirthdayTimePicker.Text = "";
+            PhoneTextBox.Text = "";
+            EmailTextBox.Text = "";
+            VKTextBox.Text = "";
         }
 
         private void ChangeSelectContact(Contact contact)
@@ -315,5 +326,9 @@ namespace ContactAppUI
         private void panel1_Paint(object sender, PaintEventArgs e) { }
 
         private void textBox1_TextChanged(object sender, EventArgs e) { }
+
+        private void ContactBox_Enter(object sender, EventArgs e) { }
+
+        private void SurnameTextBox_TextChanged(object sender, EventArgs e) { }
     }
 }
