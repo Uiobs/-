@@ -7,7 +7,14 @@ namespace ContactAppUI
 {
     public partial class ContactForm : Form
     {
+        /// <summary>
+        /// Поле для хранения всех контактов во время работы
+        /// </summary>
         private Contact _contact = new Contact();
+
+        /// <summary>
+        /// Загрузка формы добавления контактов
+        /// </summary>
         public ContactForm()
         {
             InitializeComponent();
@@ -81,8 +88,16 @@ namespace ContactAppUI
         /// </summary>
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
-            _contact.Name = NameTextBox.Text;
-            NameTextBox.BackColor = Color.White;
+            try
+            {
+                _contact.Name = NameTextBox.Text;
+                NameTextBox.BackColor = Color.White;
+            }
+            catch (Exception)
+            {
+                NameTextBox.BackColor = Color.LightSalmon;
+            }
+
         }
         
         /// <summary>

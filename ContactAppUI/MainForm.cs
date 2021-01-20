@@ -21,7 +21,7 @@ namespace ContactAppUI
         /// <summary>
         /// Начальная фраза в панели именинников
         /// </summary>
-        const string BIRTDAYS_STRING_START = "";
+        const string BIRTDAYS_STRING_START = ""; //мелкие буквы
 
         /// <summary>
         /// Поле для хранения всех контактов во время работы
@@ -314,21 +314,5 @@ namespace ContactAppUI
                 Remove();
             }
         }
-
-        private void BirthdayGroupBox_Enter(object sender, EventArgs e) { }
-
-        private void label8_Click(object sender, EventArgs e) { }
-
-        private void BirthdayTimePicker_ValueChanged(object sender, EventArgs e) { }
-
-        private void PhoneTextBox_TextChanged(object sender, EventArgs e) { }
-
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
-
-        private void textBox1_TextChanged(object sender, EventArgs e) { }
-
-        private void ContactBox_Enter(object sender, EventArgs e) { }
-
-        private void SurnameTextBox_TextChanged(object sender, EventArgs e) { }
     }
 }

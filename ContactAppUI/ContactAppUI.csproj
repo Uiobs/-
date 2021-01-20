@@ -153,11 +153,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>rmdir /s /q $(SolutionDir)InstallScript\Realese\</PreBuildEvent>
+    <PreBuildEvent>rmdir /s /q $(SolutionDir)InstallScript\Relese\</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>md $(SolutionDir)InstallScript\Realese\
-xcopy $(ProjectDir)$(OutDir)*.dll $(SolutionDir)InstallScript\Realese\
-xcopy $(ProjectDir)$(OutDir)*.exe $(SolutionDir)InstallScript\Realese\</PostBuildEvent>
+    <PostBuildEvent>md $(SolutionDir)InstallScript\Relese\
+xcopy $(ProjectDir)$(OutDir)*.dll $(SolutionDir)InstallScript\Relese\
+xcopy $(ProjectDir)$(OutDir)*.exe $(SolutionDir)InstallScript\Relese\</PostBuildEvent>
   </PropertyGroup>
 </Project>

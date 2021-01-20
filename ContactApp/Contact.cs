@@ -68,13 +68,10 @@ namespace ContactApp
             {
                 if (value.ToString().Length > 50)
                 {
-                    throw new ArgumentException("Длина фамилии не может быть больше 50 символов. "
-                        + value + " некорректная длина имени");
+                    throw new ArgumentException("Длина имени не может быть больше 50 символов"
+                        + value + " - некорректная длина имени");
                 }
-                else
-                {
                     _name = char.ToUpper(value[0]) + value.Substring(1);
-                }
             }
         }
 

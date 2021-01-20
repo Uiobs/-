@@ -145,7 +145,6 @@
             this.BirthdayTimePicker.Size = new System.Drawing.Size(337, 20);
             this.BirthdayTimePicker.TabIndex = 18;
             this.BirthdayTimePicker.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.BirthdayTimePicker.ValueChanged += new System.EventHandler(this.BirthdayTimePicker_ValueChanged);
             // 
             // VKTextBox
             // 
@@ -176,7 +175,6 @@
             this.PhoneTextBox.ReadOnly = true;
             this.PhoneTextBox.Size = new System.Drawing.Size(337, 20);
             this.PhoneTextBox.TabIndex = 15;
-            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // NameTextBox
             // 
@@ -197,7 +195,6 @@
             this.SurnameTextBox.ReadOnly = true;
             this.SurnameTextBox.Size = new System.Drawing.Size(337, 20);
             this.SurnameTextBox.TabIndex = 13;
-            this.SurnameTextBox.TextChanged += new System.EventHandler(this.SurnameTextBox_TextChanged);
             // 
             // ContactsListBox
             // 
@@ -236,7 +233,6 @@
             this.ContactBox.TabIndex = 26;
             this.ContactBox.TabStop = false;
             this.ContactBox.Text = "Contact";
-            this.ContactBox.Enter += new System.EventHandler(this.ContactBox_Enter);
             // 
             // BirthdayPanel
             // 
@@ -249,7 +245,6 @@
             this.BirthdayPanel.Name = "BirthdayPanel";
             this.BirthdayPanel.Size = new System.Drawing.Size(454, 63);
             this.BirthdayPanel.TabIndex = 26;
-            this.BirthdayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // BirthdayTextBox
             // 
@@ -264,7 +259,6 @@
             this.BirthdayTextBox.ReadOnly = true;
             this.BirthdayTextBox.Size = new System.Drawing.Size(442, 43);
             this.BirthdayTextBox.TabIndex = 0;
-            this.BirthdayTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label8
             // 
@@ -275,7 +269,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Сегодня день рождения:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // RemoveContactButton
             // 
